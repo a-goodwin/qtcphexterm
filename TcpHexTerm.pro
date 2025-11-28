@@ -8,7 +8,7 @@ QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = TcpHexTerm
+TARGET = THXT
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -24,23 +24,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
-        QHexEdit/chunks.cpp \
-        QHexEdit/commands.cpp \
-        QHexEdit/qhexedit.cpp
-HEADERS += \
-        configutils.h \
-        mainwindow.h \
-        QHexEdit/chunks.h \
-        QHexEdit/commands.h \
-        QHexEdit/qhexedit.h \
-        QHexEdit/qhexedit.sip
-FORMS += \
-        mainwindow.ui
+        SRC/main.cpp \
+        SRC/mainwindow.cpp \
+        SRC/QHexEdit/chunks.cpp \
+        SRC/QHexEdit/commands.cpp \
+        SRC/QHexEdit/qhexedit.cpp
 
+HEADERS += \
+        SRC/configutils.h \
+        SRC/mainwindow.h \
+        SRC/QHexEdit/chunks.h \
+        SRC/QHexEdit/commands.h \
+        SRC/QHexEdit/qhexedit.h \
+        SRC/QHexEdit/qhexedit.sip
+FORMS += \
+        SRC/mainwindow.ui
+
+INCLUDEPATH += \
+		SRC/
+		
 SUBDIRS += \
-    QHexEdit/qhexedit.pro
+		SRC/QHexEdit/qhexedit.pro
 
 DISTFILES += \
-    cp.cmd
+		SRC/cp.cmd
